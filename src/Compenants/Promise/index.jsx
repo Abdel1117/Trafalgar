@@ -43,13 +43,20 @@ const TextWrapper = styled.div`
       
 `
 const IconContainer = styled.div`
-    background: url(${blob}) no-repeat;
     width: 80%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr );
     justify-items: center;
     grid-gap: 1.5rem;
+    position: relative;
+
+    ::before{
+        z-index: -1;
+        content: url(${blob});
+        position: absolute;
+        left: -200px;
+    }
 `
 const ButtonWrapper = styled.div`
         
